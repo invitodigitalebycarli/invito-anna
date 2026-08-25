@@ -78,6 +78,12 @@ function Invito() {
       v.pause();
       v.currentTime = 0;
     }
+    const a = audioRef.current;
+    if (a) {
+      a.pause();
+      a.currentTime = 0;
+    }
+    setMusicOn(false);
   };
 
   const toggleMusic = () => {

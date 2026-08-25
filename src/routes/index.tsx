@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import videoAsset from "@/assets/video_busta.mp4.asset.json";
 import imageAsset from "@/assets/invito_finale.png.asset.json";
 import audioAsset from "@/assets/audio_latinamerica.mp3.asset.json";
+import bustaCover from "@/assets/busta_cover.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

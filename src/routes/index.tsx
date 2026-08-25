@@ -146,6 +146,24 @@ function Invito() {
             />
           ))}
 
+        {/* Scene 3 Instagram link — bottom-right corner, over the "clicca qui" logo area */}
+        {scene === 3 && (
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram — Invito digitale by Carli"
+            className="absolute z-20"
+            style={{
+              right: "4%",
+              bottom: "3%",
+              width: "26%",
+              height: "7%",
+              background: "transparent",
+            }}
+          />
+        )}
+
         {/* Persistent overlay controls */}
         {scene !== 1 && (
           <>

@@ -27,7 +27,9 @@ export const Route = createFileRoute("/")({
   component: Invito,
 });
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf_placeholder/viewform?embedded=true";
+const INSTAGRAM_URL = "https://www.instagram.com/invitodigitalebycarli?igsi=bzBkNGZmNDFoMmUz&utm_source=qr";
+const WHATSAPP_URL = "https://wa.me/393924559399?text=Ciao%2C+sar%C3%B0+presente+al+tuo+diciottesimo%21%F0%9F%8C%BA%0A%5BHai+allergie+o+intolleranze%3F+Specificale+qui.%5D&utm_source=chatgpt.com";
+const LOCATION_MAPS_URL = "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x133bc1ea8efc03e5:0xf94d226b555be55a?entry=s&sa=X&ved=2ahUKEwjEqJCXgLyWAxXE-gIHHU3lGzgQ4kB6BAgbEAA&hl=it";
 
 type Scene = 1 | 2 | 3;
 type Modal = null | "dress" | "location" | "rsvp";
@@ -188,12 +190,11 @@ function Invito() {
               {modal === "location" && (
                 <>
                   <p className="modal-kicker">Location</p>
-                  <h2 className="modal-title">Villa Infinito</h2>
+                  <h2 className="modal-title">Ristorante "Rosa dei Venti"</h2>
                   <span className="modal-rule" />
-                  <p className="modal-text">Palermo</p>
                   <a
                     className="modal-link"
-                    href="https://maps.google.com/?q=Villa+Infinito+Palermo"
+                    href={LOCATION_MAPS_URL}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -207,9 +208,15 @@ function Invito() {
                   <p className="modal-kicker">Conferma</p>
                   <h2 className="modal-title">Dai conferma</h2>
                   <span className="modal-rule" />
-                  <div className="modal-embed">
-                    <iframe src={GOOGLE_FORM_URL} title="Modulo di conferma" loading="lazy" />
-                  </div>
+                  <p className="modal-text">Tocca il pulsante per confermare su WhatsApp.</p>
+                  <a
+                    className="modal-link"
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Conferma su WhatsApp
+                  </a>
                 </>
               )}
             </div>

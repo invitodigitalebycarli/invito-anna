@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import videoAsset from "@/assets/video_busta.mp4.asset.json";
 import imageAsset from "@/assets/invito_finale.png.asset.json";
 import audioAsset from "@/assets/audio_latinamerica.mp3.asset.json";
+import bustaCover from "@/assets/busta_cover.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -88,11 +89,19 @@ function Invito() {
     <main className="flex min-h-screen items-center justify-center bg-stage">
       <div className="stage-frame">
         {/* Video layer: scenes 1 & 2 */}
+        <img
+          src={bustaCover}
+          alt="Busta chiusa dell'invito"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ opacity: scene === 1 ? 1 : 0 }}
+        />
+
         <video
           ref={videoRef}
           src={videoAsset.url}
           playsInline
           preload="auto"
+          poster={bustaCover}
           muted
           onEnded={() => setScene(3)}
           className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"

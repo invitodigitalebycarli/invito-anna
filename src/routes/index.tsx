@@ -119,7 +119,7 @@ function Invito() {
         {/* Scene 1 overlay */}
         {scene === 1 && (
           <button type="button" onClick={open} className="absolute inset-0 z-20 cursor-pointer">
-            <span className="tap-badge">Tocca per aprire</span>
+            <span className="ctrl-pill" style={{ pointerEvents: "none" }}>Tocca per aprire</span>
           </button>
         )}
 
@@ -156,16 +156,7 @@ function Invito() {
               aria-label={musicOn ? "Metti in pausa la musica" : "Riproduci la musica"}
               className="ctrl-round"
             >
-              {musicOn ? (
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                  <rect x="6" y="5" width="4" height="14" rx="1.2" />
-                  <rect x="14" y="5" width="4" height="14" rx="1.2" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                  <path d="M8 5.5v13l11-6.5z" />
-                </svg>
-              )}
+              🔊
             </button>
           </>
         )}

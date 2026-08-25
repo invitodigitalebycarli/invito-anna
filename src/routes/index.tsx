@@ -55,6 +55,7 @@ function Invito() {
 
   const open = () => {
     setScene(2);
+    setVideoLive(false);
     const v = videoRef.current;
     const a = audioRef.current;
     if (v) {

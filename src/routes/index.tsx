@@ -156,16 +156,7 @@ function Invito() {
               aria-label={musicOn ? "Metti in pausa la musica" : "Riproduci la musica"}
               className="ctrl-round"
             >
-              {musicOn ? (
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                  <rect x="6" y="5" width="4" height="14" rx="1.2" />
-                  <rect x="14" y="5" width="4" height="14" rx="1.2" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                  <path d="M8 5.5v13l11-6.5z" />
-                </svg>
-              )}
+              <span style={{ fontSize: "1.1rem", lineHeight: 1 }}>{musicOn ? "🔊" : "🔇"}</span>
             </button>
           </>
         )}

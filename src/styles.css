@@ -249,7 +249,7 @@
   overflow: hidden;
   border-radius: 1.6rem;
   border: 1px solid oklch(0.82 0.11 82 / 0.6);
-  padding: 7rem 1.5rem 3.4rem;
+  padding: 5.6rem 1.5rem 3.6rem;
   text-align: center;
   background:
     linear-gradient(165deg, oklch(0.99 0.015 85 / 0.96), oklch(0.95 0.035 70 / 0.94));
@@ -260,8 +260,8 @@
 .modal-floral {
   position: absolute;
   left: 50%;
-  top: -1.2rem;
-  width: 112%;
+  top: -0.9rem;
+  width: 108%;
   transform: translateX(-50%);
   pointer-events: none;
   user-select: none;
@@ -269,8 +269,8 @@
 
 .modal-floral--bottom {
   top: auto;
-  bottom: -1.6rem;
-  width: 78%;
+  bottom: -0.8rem;
+  width: 72%;
   transform: translateX(-50%) rotate(180deg);
   opacity: 0.65;
 }

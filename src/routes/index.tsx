@@ -93,7 +93,7 @@ function Invito() {
           src={videoAsset.url}
           playsInline
           preload="auto"
-          muted={false}
+          muted
           onEnded={() => setScene(3)}
           className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
           style={{ opacity: scene === 3 ? 0 : 1 }}

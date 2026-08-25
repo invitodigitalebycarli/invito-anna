@@ -142,3 +142,181 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── Invito digitale: design system ──────────────────────────── */
+:root {
+  --stage: oklch(0.16 0.03 25);
+  --invito-wine: oklch(0.38 0.15 20);
+  --invito-rose: oklch(0.62 0.19 8);
+  --invito-gold: oklch(0.82 0.11 82);
+  --invito-cream: oklch(0.97 0.02 70);
+  --shadow-premium: 0 30px 80px -20px oklch(0.12 0.05 20 / 0.75);
+}
+
+.bg-stage {
+  background: radial-gradient(circle at 50% 30%, oklch(0.24 0.05 25), var(--stage));
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  width: min(100vw, calc(100vh * 9 / 16));
+  max-height: 100vh;
+  background: var(--stage);
+}
+
+.tap-badge {
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  padding: 0.7rem 1.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid oklch(0.2 0.02 30 / 0.45);
+  background: oklch(1 0 0 / 0.4);
+  backdrop-filter: blur(2px);
+  color: oklch(0.15 0.01 30);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-size: clamp(0.95rem, 3.4vw, 1.35rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: invito-float 1.8s ease-in-out infinite;
+}
+
+@keyframes invito-float {
+  0%, 100% { transform: translate(-50%, -6px); }
+  50% { transform: translate(-50%, 6px); }
+}
+
+.ctrl-round,
+.ctrl-pill {
+  position: absolute;
+  top: 26px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid oklch(1 0 0 / 0.45);
+  background: oklch(0.2 0.03 25 / 0.35);
+  backdrop-filter: blur(6px);
+  color: var(--invito-cream);
+  box-shadow: 0 8px 24px -10px oklch(0.1 0.03 20 / 0.8);
+}
+
+.ctrl-round {
+  right: 26px;
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+}
+
+.ctrl-pill {
+  left: 26px;
+  height: 44px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.modal-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: oklch(0.12 0.04 20 / 0.6);
+  backdrop-filter: blur(4px);
+  animation: fade-in 0.3s ease-out;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  border-radius: 1.5rem;
+  border: 1px solid oklch(0.82 0.11 82 / 0.55);
+  padding: 2rem 1.5rem 1.75rem;
+  text-align: center;
+  background:
+    linear-gradient(160deg, oklch(0.32 0.12 18 / 0.92), oklch(0.22 0.08 20 / 0.94));
+  box-shadow: var(--shadow-premium);
+  animation: scale-in 0.25s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0.9rem;
+  top: 0.9rem;
+  display: inline-flex;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid oklch(0.82 0.11 82 / 0.5);
+  color: var(--invito-gold);
+}
+
+.modal-kicker {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--invito-gold);
+}
+
+.modal-title {
+  margin-top: 0.4rem;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.9rem;
+  font-style: italic;
+  color: var(--invito-cream);
+}
+
+.modal-rule {
+  display: block;
+  margin: 0.9rem auto;
+  height: 1px;
+  width: 62%;
+  background: linear-gradient(90deg, transparent, var(--invito-gold), transparent);
+}
+
+.modal-text {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1rem;
+  color: oklch(0.93 0.02 70 / 0.9);
+}
+
+.modal-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  border-radius: 999px;
+  border: 1px solid oklch(0.82 0.11 82 / 0.6);
+  padding: 0.5rem 1.2rem;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--invito-gold);
+}
+
+.modal-embed {
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 1px solid oklch(0.82 0.11 82 / 0.35);
+  background: oklch(1 0 0 / 0.95);
+}
+
+.modal-embed iframe {
+  display: block;
+  height: 22rem;
+  width: 100%;
+  border: 0;
+}

@@ -4,6 +4,7 @@ import videoAsset from "@/assets/video_busta.mp4.asset.json";
 import imageAsset from "@/assets/invito_finale.png.asset.json";
 import audioAsset from "@/assets/audio_latinamerica.mp3.asset.json";
 import bustaCover from "@/assets/busta_cover.jpg";
+import floral from "@/assets/floral_top.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,6 +45,7 @@ function Invito() {
   const [scene, setScene] = useState<Scene>(1);
   const [musicOn, setMusicOn] = useState(false);
   const [modal, setModal] = useState<Modal>(null);
+  const [videoLive, setVideoLive] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -53,6 +55,7 @@ function Invito() {
 
   const open = () => {
     setScene(2);
+    setVideoLive(false);
     const v = videoRef.current;
     const a = audioRef.current;
     if (v) {
@@ -69,6 +72,7 @@ function Invito() {
   const replay = () => {
     setModal(null);
     setScene(1);
+    setVideoLive(false);
     const v = videoRef.current;
     if (v) {
       v.pause();
@@ -95,7 +99,10 @@ function Invito() {
           src={bustaCover}
           alt="Busta chiusa dell'invito"
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: scene === 1 ? 1 : 0 }}
+          style={{
+            opacity: scene === 3 ? 0 : videoLive ? 0 : 1,
+            transition: "opacity 200ms linear",
+          }}
         />
 
         <video
@@ -105,17 +112,21 @@ function Invito() {
           preload="auto"
           poster={bustaCover}
           muted
+          onPlaying={() => setVideoLive(true)}
           onEnded={() => setScene(3)}
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-          style={{ opacity: scene === 3 ? 0 : 1 }}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{
+            opacity: scene === 3 ? 0 : 1,
+            transition: "opacity 450ms ease-out",
+          }}
         />
 
         {/* Final invitation image: scene 3 — untouched */}
         <img
           src={imageAsset.url}
           alt="Invito al diciottesimo di Anna — 24 settembre 2026, ore 20:00"
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-          style={{ opacity: scene === 3 ? 1 : 0, pointerEvents: scene === 3 ? "auto" : "none" }}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ transition: "opacity 450ms ease-in", opacity: scene === 3 ? 1 : 0, pointerEvents: scene === 3 ? "auto" : "none" }}
         />
 
         {/* Scene 1 overlay */}
@@ -185,6 +196,8 @@ function Invito() {
         {modal && (
           <div className="modal-scrim" onClick={() => setModal(null)}>
             <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+              <img src={floral} alt="" aria-hidden className="modal-floral" />
+              <img src={floral} alt="" aria-hidden className="modal-floral modal-floral--bottom" />
               <button
                 type="button"
                 aria-label="Chiudi"

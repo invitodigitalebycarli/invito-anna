@@ -182,7 +182,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
   font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -223,8 +223,8 @@
   height: 44px;
   padding: 0 1rem;
   border-radius: 999px;
-  font-family: ui-serif, Georgia, serif;
-  font-size: 0.8rem;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 0.82rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -237,92 +237,106 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: oklch(0.12 0.04 20 / 0.6);
-  backdrop-filter: blur(4px);
-  animation: fade-in 0.3s ease-out;
+  background: oklch(0.25 0.05 20 / 0.42);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.18s ease-out;
 }
 
 .modal-card {
   position: relative;
   width: 100%;
   max-width: 22rem;
-  border-radius: 1.5rem;
-  border: 1px solid oklch(0.82 0.11 82 / 0.55);
-  padding: 2rem 1.5rem 1.75rem;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  border: 1px solid oklch(0.82 0.11 82 / 0.6);
+  padding: 6.2rem 1.5rem 3.6rem;
   text-align: center;
   background:
-    linear-gradient(160deg, oklch(0.32 0.12 18 / 0.92), oklch(0.22 0.08 20 / 0.94));
+    linear-gradient(165deg, oklch(0.99 0.015 85 / 0.96), oklch(0.95 0.035 70 / 0.94));
   box-shadow: var(--shadow-premium);
-  animation: scale-in 0.25s ease-out;
+  animation: scale-in 0.18s ease-out;
+}
+
+.modal-floral {
+  position: absolute;
+  left: 50%;
+  top: -0.9rem;
+  width: 108%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.modal-floral--bottom {
+  top: auto;
+  bottom: -0.8rem;
+  width: 72%;
+  transform: translateX(-50%) rotate(180deg);
+  opacity: 0.65;
 }
 
 .modal-close {
   position: absolute;
   right: 0.9rem;
   top: 0.9rem;
+  z-index: 2;
   display: inline-flex;
   height: 30px;
   width: 30px;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid oklch(0.82 0.11 82 / 0.5);
-  color: var(--invito-gold);
+  border: 1px solid oklch(0.55 0.16 15 / 0.45);
+  background: oklch(1 0 0 / 0.75);
+  color: var(--invito-wine);
 }
 
 .modal-kicker {
-  font-family: ui-serif, Georgia, serif;
+  position: relative;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
   font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--invito-gold);
+  color: oklch(0.52 0.15 18);
 }
 
 .modal-title {
-  margin-top: 0.4rem;
-  font-family: ui-serif, Georgia, serif;
-  font-size: 1.9rem;
-  font-style: italic;
-  color: var(--invito-cream);
+  position: relative;
+  margin-top: 0.3rem;
+  font-family: "Pinyon Script", "Cormorant Garamond", cursive;
+  font-size: 2.1rem;
+  line-height: 1.15;
+  color: var(--invito-wine);
 }
 
 .modal-rule {
+  position: relative;
   display: block;
   margin: 0.9rem auto;
   height: 1px;
   width: 62%;
-  background: linear-gradient(90deg, transparent, var(--invito-gold), transparent);
+  background: linear-gradient(90deg, transparent, oklch(0.75 0.13 78), transparent);
 }
 
 .modal-text {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 1rem;
-  color: oklch(0.93 0.02 70 / 0.9);
+  position: relative;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 1.05rem;
+  color: oklch(0.38 0.06 30);
 }
 
 .modal-link {
+  position: relative;
   display: inline-block;
   margin-top: 1.1rem;
   border-radius: 999px;
-  border: 1px solid oklch(0.82 0.11 82 / 0.6);
-  padding: 0.5rem 1.2rem;
-  font-family: ui-serif, Georgia, serif;
-  font-size: 0.78rem;
+  border: 1px solid oklch(0.6 0.17 15 / 0.5);
+  background: oklch(1 0 0 / 0.6);
+  padding: 0.55rem 1.25rem;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--invito-gold);
+  color: oklch(0.48 0.17 16);
 }
 
-.modal-embed {
-  overflow: hidden;
-  border-radius: 0.9rem;
-  border: 1px solid oklch(0.82 0.11 82 / 0.35);
-  background: oklch(1 0 0 / 0.95);
-}
-
-.modal-embed iframe {
-  display: block;
-  height: 22rem;
-  width: 100%;
-  border: 0;
-}

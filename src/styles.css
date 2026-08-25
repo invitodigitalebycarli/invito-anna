@@ -160,10 +160,16 @@
 .stage-frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 9 / 16;
-  width: min(100vw, calc(100vh * 9 / 16));
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   max-height: 100vh;
   background: var(--stage);
+}
+
+@keyframes invito-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .tap-badge {
@@ -239,7 +245,7 @@
   padding: 1.5rem;
   background: oklch(0.25 0.05 20 / 0.42);
   backdrop-filter: blur(3px);
-  animation: fade-in 0.18s ease-out;
+  animation: invito-fade 0.3s ease-out;
 }
 
 .modal-card {
@@ -254,7 +260,7 @@
   background:
     linear-gradient(165deg, oklch(0.99 0.015 85 / 0.96), oklch(0.95 0.035 70 / 0.94));
   box-shadow: var(--shadow-premium);
-  animation: scale-in 0.18s ease-out;
+  animation: invito-fade 0.32s ease-out;
 }
 
 .modal-floral {

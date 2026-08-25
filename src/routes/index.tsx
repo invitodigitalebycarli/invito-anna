@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import videoAsset from "@/assets/video_busta.mp4.asset.json";
-import imageAsset from "@/assets/invito_finale.png.asset.json";
-import audioAsset from "@/assets/audio_latinamerica.mp3.asset.json";
+import videoAsset from "@/assets/video_busta.mp4";
+import imageAsset from "@/assets/invito_finale.png";
+import audioAsset from "@/assets/audio_latinamerica.mp3";
 import bustaCover from "@/assets/busta_cover.jpg";
 import floral from "@/assets/floral_top.png";
 
@@ -113,7 +113,7 @@ function Invito() {
 
         <video
           ref={videoRef}
-          src={videoAsset.url}
+          src={videoAsset}
           playsInline
           preload="auto"
           poster={bustaCover}
@@ -129,7 +129,7 @@ function Invito() {
 
         {/* Final invitation image: scene 3 — untouched */}
         <img
-          src={imageAsset.url}
+          src={imageAsset}
           alt="Invito al diciottesimo di Anna — 24 settembre 2026, ore 20:00"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ transition: "opacity 450ms ease-in", opacity: scene === 3 ? 1 : 0, pointerEvents: scene === 3 ? "auto" : "none" }}
@@ -260,7 +260,7 @@ function Invito() {
           </div>
         )}
 
-        <audio ref={audioRef} src={audioAsset.url} loop preload="auto" />
+        <audio ref={audioRef} src={audioAsset} loop preload="auto" />
       </div>
     </main>
   );
